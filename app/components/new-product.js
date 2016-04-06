@@ -9,10 +9,10 @@ export default Ember.Component.extend({
 
     saveA() {
       var params = {
-        title: this.get('title'),
-        description: this.get('description'),
-        cost: this.get('cost'),
-        image: this.get('image')
+        title: this.get('title') ? this.get('title'): "",
+        description: this.get('description') ? this.get('description'): "",
+        cost: parseInt(this.get('cost') ? this.get('cost'): 0),
+        image: this.get('image') ? this.get('image'): "",
       };
       this.set('addNewProduct', false);
       this.sendAction('saveB', params);

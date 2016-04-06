@@ -18,6 +18,10 @@ export default Ember.Route.extend({
       var newProductName = this.store.createRecord('product', params);
       newProductName.save();
       this.transitionTo('store');
-    }
+    },
+    // destroyProduct(item) {
+    //   product.destroyRecord();
+    //   this.transitionTo('store');
+    // }
   }
 });
