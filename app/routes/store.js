@@ -10,7 +10,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('product');
+    return Ember.RSVP.hash({
+      products: this.store.findAll('product'),
+      comments: this.store.findAll('comment')
+
+    });
   },
 
   actions: {
@@ -19,6 +23,11 @@ export default Ember.Route.extend({
       newProductName.save();
       this.transitionTo('store');
     },
+      saveCommentE(params) {
+        var newCommentName = this.store.createRecord('comment', params);
+        newCommentName.save();
+        this.transitionTo('store');
+      }
     // destroyProduct(item) {
     //   product.destroyRecord();
     //   this.transitionTo('store');

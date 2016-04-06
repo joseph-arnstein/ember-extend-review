@@ -1,7 +1,7 @@
 <h1>HI this is in store hbs</h1>
 
-{{#each model as |product|}}
-  {{product-tile product=product}}
+{{#each model.products as |product|}}
+  {{product-tile product=product saveCommentD='saveCommentE'}}
 {{/each}}
 
 {{new-product  saveB='saveC'}}

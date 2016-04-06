@@ -6,6 +6,9 @@ export default Ember.Component.extend({
   actions: {
     addToCart(item) {
       this.get('shoppingCart').add(item);
+    },
+    saveCommentC(params) {
+      this.sendAction('saveCommentD', params);
     }
   }
 });
