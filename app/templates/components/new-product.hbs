@@ -1,24 +1,28 @@
 {{#if addNewProduct}}
   <h2>New Product</h2>
   <form>
-  <div class="form-group">
-    <label for="title">Product Name</label>
-    {{input value=title id="title"}}
-  </div>
-  <div class="form-group">
-    <label for="description">Product Description</label>
-    {{input value=description id="description"}}
-  </div>
-  <div class="form-group">
-    <label for="cost">Cost</label>
-    {{input value=cost id="cost"}}
-  </div>
-  <div class="form-group">
-    <label for="image">Image</label>
-    {{input value=image id="image"}}
-  </div>
-  <button {{action 'saveA'}}>Save</button>
-  </form>
+    <div class="form-group">
+      <label for="seller">Vendor (you dude, your name)</label>
+      {{input value=seller id="seller"}}
+    </div>
+    <div class="form-group">
+      <label for="title">Name of Product</label>
+      {{input value=title id="title"}}
+    </div>
+    <div class="form-group">
+      <label for="description">Product Description</label>
+      {{input value=description id="description"}}
+    </div>
+    <div class="form-group">
+      <label for="cost">Cost</label>
+      {{input value=cost id="cost"}}
+    </div>
+    <div class="form-group">
+      <label for="image">Image</label>
+      {{input value=image id="image"}}
+    </div>
+    <button {{action 'saveA'}}>Save</button>
+    </form>
   {{else}}
   <button {{action 'productFormShow'}}>New Product</button>
 {{/if}}

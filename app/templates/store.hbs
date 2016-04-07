@@ -4,11 +4,31 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-md-4">
+
+      <ul>
+        {{#each model.products as |product|}}
+        <!-- <img src={{product.image}}> -->
+        <li>{{#link-to 'store.product' product.id}}{{product.title}}{{/link-to}}</li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-md-8">
+      {{outlet}}
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <div class="row">
     {{#each model.products as |product|}}
       {{product-tile product=product saveCommentD='saveCommentE'}}
     {{/each}}
   </div>
 </div>
+
 
 {{new-product  saveB='saveC'}}
 

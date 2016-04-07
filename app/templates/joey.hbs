@@ -1,0 +1,12 @@
+<h1>I'm working!</h1>
+
+{{#each model.product as |product|}}
+<p>{{product.title}}</p>
+{{/each}}
+
+{{#each model}}
+  <h2>{{model.title}}</h2>
+  <h5>{{model.description}}</h5>
+  <h4>Vendor: {{model.seller}}</h4>
+  <img src={{model.image}}>
+{{/each}}

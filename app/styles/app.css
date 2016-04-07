@@ -1,7 +1,12 @@
 .container {
   margin-bottom: 50px;
 }
- img {
+
+img {
+  width: 90%;
+}
+
+img.secondary {
    width: 90%;
    max-width: 300px;
  }
