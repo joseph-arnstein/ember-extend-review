@@ -25,7 +25,11 @@ export default Ember.Route.extend({
     },
       saveCommentE(params) {
         var newCommentName = this.store.createRecord('comment', params);
-        newCommentName.save();
+        var product = params.product;
+        product.get('comments').addObject(newCommentName);
+        newCommentName.save().then(function() {
+          return product.save();
+        });
         this.transitionTo('store');
       }
     // destroyProduct(item) {

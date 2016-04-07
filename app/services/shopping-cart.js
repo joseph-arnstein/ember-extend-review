@@ -8,6 +8,6 @@ export default Ember.Service.extend({
     this.get('items').pushObject(item);
   },
   deleteFromCart(item) {
-    this.get('items').removeObject(item)
+    this.get('items').removeObject(item);
   }
 });

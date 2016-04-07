@@ -7,7 +7,7 @@ export function addCost(params/*, hash*/) {
 
   for(var i=0; i < items.get('length'); i++) {
     var itemCost = items.objectAt(i).get('cost');
-    totalCost += itemCost
+    totalCost += itemCost;
   }
 
   return totalCost;
