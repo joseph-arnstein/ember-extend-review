@@ -23,18 +23,23 @@ export default Ember.Route.extend({
       newProductName.save();
       this.transitionTo('store');
     },
-      saveCommentE(params) {
-        var newCommentName = this.store.createRecord('comment', params);
-        var product = params.product;
-        product.get('comments').addObject(newCommentName);
-        newCommentName.save().then(function() {
-          return product.save();
-        });
-        this.transitionTo('store');
-      }
-    // destroyProduct(item) {
-    //   product.destroyRecord();
-    //   this.transitionTo('store');
-    // }
+    saveCommentE(params) {
+      var newCommentName = this.store.createRecord('comment', params);
+      var product = params.product;
+      product.get('comments').addObject(newCommentName);
+      newCommentName.save().then(function() {
+        return product.save();
+      });
+      this.transitionTo('store');
+    },
+    saveVoteE(params) {
+      var product = params.thisProduct;
+      var arrayVotes = product.get('votes');
+      arrayVotes.push(params.newVote);
+      product.set('votes', arrayVotes);
+      // console.log(product.get('votes'));
+      product.save();
+
+    },
   }
 });

@@ -6,4 +6,5 @@ export default DS.Model.extend({
   cost: DS.attr(),
   image: DS.attr(),
   comments: DS.hasMany('comment', {async: true}),
+  votes: DS.attr(),
 });

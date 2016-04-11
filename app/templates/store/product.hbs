@@ -2,4 +2,15 @@
 <h5>{{model.description}}</h5>
 <h4>Vendor: {{model.seller}}</h4>
 <img src={{model.image}}>
+
+<ul>
+  {{#each model.comments as |comment|}}
+    <li>
+      {{comment.name}} said about this product:
+      <br>
+      {{comment.content}}
+    </li>
+  {{/each}}
+</ul>
+
 <h4>{{#link-to 'joey'}}See more from this vendor{{/link-to}}</h4>

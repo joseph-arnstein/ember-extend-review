@@ -5,18 +5,39 @@
   <img class="secondary" {{action 'seeMore'}} src={{product.image}}><br>
 
   {{#if showDetails}}
-    {{product.description}}<br>
-    {{product.cost}}<br>
+    <p>
+      {{product.description}}<br>
+      ${{product.cost}}<br>
+      Average vote: {{show-average product.votes product.votes.length}}
+    </p>
     <ul>
       {{#each product.comments as |comment|}}
-        <li>{{comment.name}}</li>
-        <li>{{comment.content}}</li>
+        <li>{{comment.name}} says {{comment.content}}</li>
       {{/each}}
     </ul>
-  {{/if}}
-  <br>
-  <button {{action 'addToCart' product}}>Add to Cart</button>
+    <br>
+    <button {{action 'hideMore'}}>Hide details and comments</button>
+    <br>
+    <button {{action 'addToCart' product}}>Add to Cart</button>
 
-  {{new-comment product=product saveCommentB='saveCommentC'}}
+    {{new-comment product=product saveCommentB='saveCommentC'}}
+    {{add-vote product=product saveVoteB='saveVoteC'}}
+  {{else}}
+  <br>
+  <button {{action 'seeMore'}}>Show details and comments</button>
+  {{/if}}
+
+
+  <!-- <br>
+  {{product.description}}<br>
+  {{product.cost}}<br>
+  <ul>
+    {{#each product.comments as |comment|}}
+      <li>{{comment.name}}</li>
+      <li>{{comment.content}}</li>
+    {{/each}}
+  </ul>
+
+  <br> -->
 
 </div>
