@@ -8,5 +8,10 @@ img {
 
 img.secondary {
    width: 90%;
+   height: 180px;
    max-width: 300px;
  }
+
+.jumbotron {
+  text-align: center;
+}

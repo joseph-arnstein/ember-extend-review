@@ -1,5 +1,11 @@
-<h1>Items in Cart:</h1>
-{{#each shoppingCart.items as |item|}}
-  {{item.title}} -- ${{item.cost}}
-<button {{action 'delete' item}}>Delete</button>
-{{/each}}
+<div class="container">
+  <div class="table">
+    <h1>Items in Cart:</h1>
+    <tbody>
+      {{#each shoppingCart.items as |item|}}
+        <tr><td><{{item.title}}</td><td>${{item.cost}}</td>
+      <td><button {{action 'delete' item}}>Delete</button></td></tr>
+      {{/each}}
+    </tbody>
+  </div>
+</div>

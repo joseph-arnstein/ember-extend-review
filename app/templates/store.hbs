@@ -1,10 +1,10 @@
 <div class="jumbotron">
-<h1>HI this is in store hbs</h1>
+<h2>Click to see stuff</h2>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-3">
 
       <ul>
         {{#each model.products as |product|}}
@@ -14,8 +14,13 @@
       </ul>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-6">
       {{outlet}}
+    </div>
+
+    <div class="col-md-3">
+      {{display-cart}}
+      {{total-cost}}
     </div>
   </div>
 
@@ -29,9 +34,6 @@
   </div>
 </div>
 
-
-{{new-product  saveB='saveC'}}
-
-{{display-cart}}
-
-{{total-cost}}
+<div class="container">
+  {{new-product  saveB='saveC'}}
+</div>

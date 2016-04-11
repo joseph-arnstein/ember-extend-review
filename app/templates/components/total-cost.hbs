@@ -1,4 +1,8 @@
-<h3>Here's our total cost>> coming from total-cost.hbs</h3>
-
-
-{{add-cost shoppingCart.items shoppingCart.items.length}}
+<div class="container">
+  <div class="table">
+    <h4>Total Cost of Items in cart:</h4>
+    <tbody>
+        <tr><td>${{add-cost shoppingCart.items shoppingCart.items.length}}</td></tr>
+    </tbody>
+  </div>
+</div>
